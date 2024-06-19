@@ -1,82 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather Forecast</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color:white;
-    text-align: center;
-    padding: 20px;
-  }
-  .temperature {
-    font-size: 32px;
-    font-weight: bold;
-  }
-  .forecast {
-    margin-top: 20px;
-  }
-  .forecast-item {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  .button {
-    background-color: blue; 
-    border: 1px solid #000000; 
-    border-radius: 20px; 
-    padding: 10px 20px; 
-    font-size: 16px; 
-    color: #000000; 
-    text-decoration: none; 
-    cursor: pointer;
-  }
-  .footer {
-    margin-top: 30px;
-    font-size: 14px;
-  }
-  .weather-icon {
-    font-size: 48px;
-  }
-  .fa-sun {
-    color:yellow;
-  }
-  .fa-cloud-sun{
-    color: blue;
-  }
-  .forecast-icon {
-    font-size: 24px;
-    margin-right: 10px;
-  }
-</style>
+        h1 {
+            color: #3498db;
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px auto;
+            padding: 15px;
+            max-width: 350px;
+            transition: background-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #92b846;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <i class="fas fa-cloud-sun weather-icon"></i><br><br>
-  <div class="temperature">Currently 21° in Tokyo</div><br>
-  <div>13° / 23° </div><br><br>
-  <div class="forecast">
-    <div class="forecast-item">
-      <i class="fas fa-cloud-showers-heavy forecast-icon"></i>
-      Tomorrow
-    </div><br>
-    <div class="temp">10° / 22°</div><br><br><br>
-    <div class="forecast-item">
-      <i class="fas fa-cloud forecast-icon"></i>
-      Saturday
-    </div><br>
-    <div class="temp">15° / 17°</div><br><br><br>
-    <div class="forecast-item">
-      <i class="fas fa-sun forecast-icon"></i>
-      Sunday
-    </div><br>
-    <div class="temp">25° / 28°</div><br><br><br>
-  </div>
-  <button class="button" onclick="changeCity()">Change city</button>
-  <div class="footer">Coded by Anne Apiyo</div>
+    <h1>🌤<br>Currently 21°C in Tokyo</h1>
+    <h2>Low: 13°C / High: <strong>23°C</strong></h2>
+    <ul>
+        <li>
+            <h3>🌧 Tomorrow</h3>
+            <p>Low: 10°C / High: <strong>22°C</strong></p>
+        </li>
+        <li>
+            <h3>🌥 Saturday</h3>
+            <p>Low: 15°C / High: <strong>17°C</strong></p>
+        </li>
+        <li>
+            <h3>☀️ Sunday</h3>
+            <p>Low: 25°C / High: <strong>28°C</strong></p>
+        </li>
+    </ul>
+    <button id="cityButton">Change City</button>
+    <p class="footer">Developed by Anne Apiyo</p>
 
-
+    <script>
+        document.getElementById("cityButton").addEventListener("click", function() {
+            let city = prompt("Enter your city:");
+            let temperature = prompt("Enter the current temperature:");
+            if (city && temperature) {
+                let temp = parseFloat(temperature);
+                let emoji = temp < 0 ? "☹️" : "😄";
+                document.querySelector("h1").innerHTML = `${emoji}<br>Currently ${temp}°C in ${city}`;
+            } else {
+                alert("Please enter both city and temperature.");
+            }
+        });
+    </script>
 </body>
 </html>
