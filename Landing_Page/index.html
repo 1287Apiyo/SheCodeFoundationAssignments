@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Academy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease;
+            color: #333;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #1e3c72;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: #2a5298;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #1e3c72;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2a5298;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Code Academy</h1>
+        <h2>Your Journey to Becoming a Developer Starts Here</h2>
+        <p>
+            Coding is a <strong>superpower</strong> that can open up <em>unlimited possibilities</em>. Whether you want to create websites, develop apps, or analyze data, knowing how to code will help you achieve your goals.
+        </p>
+        <img src="https://www.freecodecamp.org/news/content/images/size/w2000/2020/08/code.jpg" alt="Coding image" class="hero-image">
+        <p>
+            <span class="highlight">Join our community</span> of learners and start building your skills today. 
+        </p>
+        <button onclick="getUserInfo()">Join Now</button>
+        <br><br>
+        <hr>
+        <h2>Why Learn with Us?</h2>
+        <p>At Code Academy, we provide:</p>
+        <ul>
+            <li>High-quality tutorials</li>
+            <li>Interactive coding exercises</li>
+            <li>Supportive community</li>
+        </ul>
+        <div id="user-info" style="display:none;">
+            <h2>Welcome!</h2>
+            <p>We're excited to have you join our coding community.</p>
+        </div>
+    </div>
+    <script>
+        function getUserInfo() {
+            let userName = prompt("Please enter your name:");
+            if (userName) {
+                alert("Welcome, " + userName + "!");
+                document.getElementById('user-info').style.display = 'block';
+                document.getElementById('user-info').innerHTML = "<h2>Welcome, " + userName + "!</h2><p>We're excited to have you join our coding community.</p>";
+            } else {
+                alert("Please enter your name to join.");
+            }
+        }
+    </script>
+</body>
+</html>
