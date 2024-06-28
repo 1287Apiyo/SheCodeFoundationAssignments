@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Adventures</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            width: 60%;
+            margin: 50px auto;
+            font-family: "Arial", sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            border: 2px solid #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.2em;
+        }
+
+        img {
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #fff;
+            font-size: 1.2em;
+            border-radius: 5px;
+            color: #fff;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        small {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Embrace the Outdoors</h1>
+    <h2>Discover the Joy of Hiking</h2>
+    <hr>
+    <img src="https://www.nps.gov/subjects/trails/parks/iuva/Long-Barn-Loop-04.jpg" alt="Hiking image">
+    <hr>
+    <p>
+        <strong>Hiking</strong> is a great way to experience nature, get some exercise, and enjoy the great outdoors. Whether you're hiking up a mountain or strolling through a forest, there's always something new to discover. Embrace the tranquility and adventure that hiking offers, and connect with nature on a deeper level.
+    </p>
+    <small><a href="https://en.wikipedia.org/wiki/Hiking" target="_blank">Learn more about Hiking</a></small>
+    <button onclick="getUserInfo()">Join a Hiking Group</button>
+
+    <script>
+        function getUserInfo() {
+            let name = prompt('What is your name?');
+            if (name) {
+                alert('Thanks, ' + name + '! We will be in touch. Meanwhile, enjoy your hiking adventures!');
+                document.body.innerHTML += "<h2>Welcome, " + name + "!</h2><p>We're excited to have you join our hiking community.</p>";
+            } else {
+                alert('Please enter your name to join the hiking group.');
+            }
+        }
+    </script>
+</body>
+</html>
